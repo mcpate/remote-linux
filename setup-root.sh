@@ -9,6 +9,8 @@ sudo apt-get install -y vim
 
 sudo apt-get install -y openssh-server
 
+sudo apt-get install -y byobu
+
 # git pull and install dotfiles
 cd $HOME
 if [ -d ./dotfiles/ ]; then
