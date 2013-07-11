@@ -22,4 +22,4 @@ ln -sb dotfiles/.bashrc .
 ln -sb dotfiles/.bashrc_custom .
 ln -sb dotfiles/.bash_profile .
 ln -sb dotfiles/.vimrc
-cp dotfiles/.vim .
+ln -sb dotfiles/.vim .
