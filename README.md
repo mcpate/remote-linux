@@ -1,21 +1,14 @@
 setup.git
 =========
-Clone and run this on a new EC2 instance running Ubuntu 12.04.2 LTS to
-configure both the machine and your individual development environment as
-follows:
-
-```sh
-cd $HOME
-sudo apt-get install -y git-core
-git clone https://github.com/mcpate/remote_setup-linux.git
-./setup/setup.sh   
-```
+1. On a fresh Ubuntu install (12.04 LTS) get git with:
+`sudo apt-get install git`
+2. CD to `$HOME` and clone this repository with:
+`git clone https://github.com/mcpate/remote_setup-linux.git`
+3. Run the shell script
+`./remote_setup-linux/setup.sh`
 
 After the initial set-up is run and all programs are installed, the dotfiles repository should be incorporated on the remote machine.
 
-~~See also http://github.com/startup-class/dotfiles and
-[Startup Engineering Video Lectures 4a/4b](https://class.coursera.org/startup-001/lecture/index)
-for more details.~~
 
 
 
