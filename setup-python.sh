@@ -39,11 +39,22 @@ cd pyproj-1.9.3
 sudo python setup.py install
 
 #jasper
-wget http://www.ece.uvic.ca/~frodo/jasper/software/jasper-1.900.1.zip
-unzip jasper-1.900.1.zip
-cd jasper-1.900.1
-sudo ./configure
-sudo make
+#wget http://www.ece.uvic.ca/~frodo/jasper/software/jasper-1.900.1.zip
+#unzip jasper-1.900.1.zip
+#cd jasper-1.900.1
+#sudo ./configure
+#sudo make
+#sudo make install
+
+#cmake (to be able to make openjepg below)
+sudo apt-get install -y cmake
+
+#openjpeg
+wget https://openjpeg.googlecode.com/files/openjpeg-2.0.0.tar.gz
+tar xvfz openjpeg-2.0.0.tar.gz
+cd openjpeg-2.0.0
+cmake .
+make
 sudo make install
 
 #GRIB
