@@ -11,6 +11,9 @@ sudo apt-get install -y openssh-server
 
 sudo apt-get install -y byobu
 
+#This includes C compiler among other things
+sudo apt-get install -y build-essential
+
 # git pull and install dotfiles
 cd $HOME
 if [ -d ./dotfiles/ ]; then
