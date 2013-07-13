@@ -1,8 +1,11 @@
 #!/bin/bash
+# Questions: how to I track exit status?
+#	     does it matter that I do "python setup.py install" and not "python3..."?
+#     
 
-install_dir="~/Downloads"
+ID="~/Downloads"
 
-cd install_dir
+cd $ID
 
 #important python tools
 sudo apt-get install -y libsqlite3-dev
@@ -19,19 +22,19 @@ make test
 sudo make install
 
 #python setuptools
-cd install_dir
+cd $ID
 sudo apt-get install -y python-setuptools
 
 #virtualenv
-cd install_dir
+cd $ID
 wget https://pypi.python.org/packages/source/v/virtualenv/virtualenv-1.9.1.tar.gz
 tar xvfz virtualenv-1.9.1.tar.gz
 cd virtualenv-1.9.1 
-sudo python3 setup.py install
+sudo python setup.py install
 
 #pip
-cd install_dir
+cd $ID
 wget https://pypi.python.org/packages/source/p/pip/pip-1.3.1.tar.gz
 tar xvfz pip-1.3.1.tar.gz
 cd pip-1.3.1
-sudo python3 setup.py install
+sudo python setup.py install

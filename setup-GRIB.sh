@@ -27,12 +27,14 @@ sudo python setup.py install
 sudo apt-get install -y cmake
 
 #openjpeg
-wget https://openjpeg.googlecode.com/files/openjpeg-2.0.0.tar.gz
-tar xvfz openjpeg-2.0.0.tar.gz
-cd openjpeg-2.0.0
-cmake .
-make
-sudo make install
+sudo apt-get install openjpeg-tools
+
+#wget https://openjpeg.googlecode.com/files/openjpeg-2.0.0.tar.gz
+#tar xvfz openjpeg-2.0.0.tar.gz
+#cd openjpeg-2.0.0
+#cmake .
+#make
+#sudo make install
 
 #GRIB
 cd .. 
