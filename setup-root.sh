@@ -17,6 +17,8 @@ sudo apt-get install -y openssh-server
 
 sudo apt-get install -y byobu
 
+sudo apt-get install tree
+
 # git pull and install dotfiles
 cd Downloads
 git clone https://github.com/mcpate/dotfiles.git
