@@ -1,48 +1,35 @@
 #!/bin/bash
-
-#verify Python
-
-#verify pip
-
+# Dependencies: Python, pip
+# Questions: how do I verify dependencies and if not found abort?
 
 #numpy. This should probably take advantage of pip
-sudo apt-get install python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose
+sudo pip3 install numpy
 
 #pyproj
-cd ..
-wget https://pyproj.googlecode.com/files/pyproj-1.9.3.tar.gz
-tar xvfz pyproj-1.9.3.tar.gz
-cd pyproj-1.9.3
-sudo python setup.py install
+sudo pip3 install pyproj
 
-#jasper
-#wget http://www.ece.uvic.ca/~frodo/jasper/software/jasper-1.900.1.zip
-#unzip jasper-1.900.1.zip
-#cd jasper-1.900.1
-#sudo ./configure
-#sudo make
-#sudo make install
+#openjpeg
+sudo apt-get install -y libopenjpeg-dev
 
 #cmake (to be able to make openjepg below)
 sudo apt-get install -y cmake
 
-#openjpeg
-sudo apt-get install openjpeg-tools
-
-#wget https://openjpeg.googlecode.com/files/openjpeg-2.0.0.tar.gz
-#tar xvfz openjpeg-2.0.0.tar.gz
-#cd openjpeg-2.0.0
-#cmake .
-#make
-#sudo make install
-
 #GRIB
-cd .. 
+cd ~/Downloads 
 wget https://software.ecmwf.int/wiki/download/attachments/3473437/grib_api-1.10.4.tar.gz?api=v2 
 tar xvfz grib_api-1.10.4.tar.gz\?api\=v2  
-cd grib_api-1.10.4 
-mkdir /usr/local/grib_api_dir 
-./configure --prefix=/usr/local/grib_api_dir 
-make 
-make check 
+cd grib_api-1.10.4
+export CFLAGS="-O2 -fPIC"
+sudo ./configure 
+sudo make 
+sudo make check 
 sudo make install 
+
+#pygrib
+sudo pip3 install pygrib
+
+#If you start the python interpreter and try to "import pygrib" you should get an error because
+#the shared library "libgrib_api-1.10.4.so" can't be found.  It is installed in usr/local/lib, 
+#therefore solution is making a symbolic link in usr/lib so python can find it.
+cd /usr/lib
+sudo ln -sb /usr/local/lib/libgrib_api-1.10.4.so .
