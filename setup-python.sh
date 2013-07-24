@@ -3,6 +3,7 @@
 #            how do I exit if an install fails?
 
 ID=~/Downloads
+LOG=~/installs.txt
 
 cd $ID
 
@@ -11,3 +12,5 @@ sudo apt-get install -y python3.3-dev
 
 #pip
 sudo apt-get install -y python3-pip
+
+echo "python3.3-dev and pip installed" >> $LOG
