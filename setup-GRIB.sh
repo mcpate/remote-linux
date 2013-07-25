@@ -1,18 +1,21 @@
 #!/bin/bash
 # Dependencies: Python, pip
 # Questions: how do I verify dependencies and if not found abort?
+LOG=~/installs.txt
 
 #numpy. This should probably take advantage of pip
 sudo pip3 install numpy
 
 #pyproj
 sudo pip3 install pyproj
+echo "numpy and pyproj installed" >> $LOG
 
 #openjpeg
 sudo apt-get install -y libopenjpeg-dev
 
 #cmake (to be able to make openjepg below)
 sudo apt-get install -y cmake
+echo "libopenjepg-dev and cmake installed" >> $LOG
 
 #GRIB
 cd ~/Downloads 
@@ -24,9 +27,11 @@ sudo ./configure
 sudo make 
 sudo make check 
 sudo make install 
+echo "grib_api installed" >> $LOG
 
 #pygrib
 sudo pip3 install pygrib
+echo "pygrib installed" >> $LOG
 
 #If you start the python interpreter and try to "import pygrib" you should get an error because
 #the shared library "libgrib_api-1.10.4.so" can't be found.  It is installed in usr/local/lib, 
