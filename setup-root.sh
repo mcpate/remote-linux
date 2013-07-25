@@ -14,6 +14,9 @@ sudo apt-get install -y build-essential
 sudo apt-get install -y vim
 
 sudo apt-get install -y openssh-server
+cd /etc/ssh
+#this at least creates a copy. It will still need to be edited...
+sudo cp sshd_config sshd_config.original
 
 sudo apt-get install -y byobu
 

@@ -8,6 +8,14 @@ fi
 #java
 sudo apt-get install -y openjdk-7-jre
 
+#sbt
+cd ~/Downloads
+wget http://scalasbt.artifactoryonline.com/scalasbt/sbt-native-packages/org/scala-sbt/sbt/0.12.2/sbt.tgz
+tar xvf sbt.tgz
+mkdir ~/sbt
+mv sbt ~/sbt
+PATH=$PATH:~/sbt/sbt/bin
+
 #scala
 cd ~/Downloads
 wget http://www.scala-lang.org/downloads/distrib/files/scala-2.10.2.tgz
